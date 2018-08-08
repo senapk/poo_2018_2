@@ -7,6 +7,7 @@
     - Interativa
     - Prática
     - Atividades em dupla em sala de aula
+    - Assiduidade: não faz a atividade ou não participa, leva falta
 - Plágio
     - Uma forma de corrupção estudantil
     - Obter vantagem ilícita sobre o sistema de avaliação.
