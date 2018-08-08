@@ -1,0 +1,37 @@
+# Aula x011
+
+- Valores
+    - Honestidade(vocês) e Justiça(eu)
+- Modelo de aula
+    - Participação em sala de aula
+    - Interativa
+    - Prática
+    - Atividades em dupla em sala de aula
+- Plágio
+    - Uma forma de corrupção estudantil
+    - Obter vantagem ilícita sobre o sistema de avaliação.
+    - Dizer que fez algo que não fez ou sabe algo que não sabe.
+    - Infringir as regras definidas pela atividade.
+    - Procurar pelas respostas de uma atividade e omitir isso.
+- Trabalhos
+    - vou avaliar os **relatórios**, nem sempre os códigos
+    - alguns podem ser feitos em dupla
+    - outros, obrigatoriamente individuais
+    - nota (1 - 4) para cada atividade
+    - prazo fixo sem prorrogação
+        - nota de reboot - estudar e corrigir
+- Avaliação
+    - mini avaliações para acompanhamento quizenais (30 min)
+    - trabalhos semanais (quinzenais)
+    - provas se necessário
+    - cada atividade ou prova tem um peso
+        - a nota final é feita pela média ponderada de todas as atividades
+    - planilha de notas e repositórios
+- Material didático e ajuda
+    - exemplos em sala de aula - github atualizado toda aula
+    - gravação da aula
+    - livro e site
+- Entrega de material
+    - Moodle
+    - Git da disciplina
+    - Git do repositório de trabalhos
