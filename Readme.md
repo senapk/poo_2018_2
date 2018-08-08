@@ -26,6 +26,8 @@
     - trabalhos semanais (quinzenais)
     - provas se necessário
     - cada atividade ou prova tem um peso
+    - código que tem identação errada sofrerá redução de nota
+    - avaliar funcionalidades entregues. Código que não funciona não será avaliado.
         - a nota final é feita pela média ponderada de todas as atividades
     - planilha de notas e repositórios
 - Material didático e ajuda
