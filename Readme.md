@@ -38,3 +38,5 @@
     - Moodle
     - Git da disciplina
     - Git do repositório de trabalhos
+
+- Material de Leitura sobre Makefiles: https://www.embarcados.com.br/introducao-ao-makefile/
