@@ -59,13 +59,14 @@ int main(){
 
     int a = 5;
     int &b = a; //b é uma referencia para a (mesmo endereço)
-    
+    //int &c = 5; //preciso de um lugar
+
     b = 7; //a também se torna 7, ja que ambos sao a mesma variável
     
-    int *c = &b; //c é um ponteiro que recebeu o endereço de b
+    int* c = &b; //c é um ponteiro que recebeu o endereço de b
 
     *c = 1; //todas as a e b são 1, pois o elemento que c apontava recebe 1
-
+    
     c = nullptr;
 
     fcopia(1);

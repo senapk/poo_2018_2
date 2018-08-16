@@ -1,6 +1,28 @@
 # Introdução ao CPP
 
 ---
+## Compilando
+- O seu código deve ter a extensão .cpp.
+- Ele pode ser compilado com o g++. 
+    - No Windows instale o Mingw.
+    - No linux, só instalar o pacote básico de desenvolvimento.
+        - Ubuntu: sudo apt-get install build-essential
+        - Arch: sudo pacman -S base-devel
+- O seguinte Makefile pode ser utilizado para compilar e executar arquivos .cpp
+
+```
+CPPFLAGS = -std=c++14 -Wall
+%:
+	g++ $(CPPFLAGS) $@.cpp -o exe_$@
+	@ ./exe_$@
+```
+
+- Após isso, se o arquivo se charmar soma.cpp, digite 
+
+        make soma
+
+
+---
 ## Escopo
 
 - Protótipo, argumentos, tipo de retorno
