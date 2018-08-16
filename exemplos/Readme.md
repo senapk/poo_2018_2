@@ -1,3 +1,5 @@
+## Escopo
+
 - Protótipo, argumentos, tipo de retorno
 - Escopo Global e Local
 - Operador de Resolução de Escopo (::)
@@ -9,11 +11,12 @@ int x = 11;
 int main () {
     int x = 9;
     std::cout << x << " " << ::x << std::endl;
-    return 0;
 }
 ```
 
 ---
+## Static
+
 - Prefixadas pela palavra chave static
 - Uma função declarada como estática só é acessı́vel dentro do arquivo onde foi criada.
 - Variáveis estáticas são sensı́veis ao contexto.
@@ -38,6 +41,7 @@ int main () {
 ```
 
 ---
+## Args
 
 - argc é a quantidade de argumentos
 - argv é a lista de argumentos
@@ -54,6 +58,7 @@ int main(int argc , char *argv []) {
 ```
 
 ---
+## Memória dinãmica
 
 - Memória dinâmica é alocada e desalocada com new e delete
 
@@ -74,6 +79,7 @@ int main () {
 ```
 
 ---
+## C - Funções
 
 - Ponteiros para função do jeito C de ser
  
@@ -98,13 +104,13 @@ int main () {
     int size = sizeof(L)/sizeof(int);
     cout << "Soma: " << proc(L, size, soma) << endl;
     cout << "Prod: " << proc(L, size, mult) << endl;
-    return 0;
 }
 ```
 
  ---
+ ## C++ - Funções
 
-- Jeito c++ de ser de passar funcoes
+- Jeito c++ de ser de passar funcoes c++11
 
 ```c++
 #include <iostream>
@@ -125,12 +131,13 @@ int main () {
     int size = sizeof(L)/sizeof(int);
     cout << "Soma: " << proc(L, size, [](int x, int y){return x + y;}) << endl;
     cout << "Prod: " << proc(L, size, [](int x, int y){return x + y;}) << endl;
-    return 0;
 }
 ```
 
 ---
- - Retornando referências
+## C - Funções
+
+ - Uso de variáveis dummy static para retornar referências
 
 ```c++
 #include <iostream>
@@ -148,6 +155,5 @@ int main() {
     for (int k = 0; k < 10; k++)
         std::cout << get(k) << " ";
     std::cout << std::endl;
-    return 0;
 }
 ```

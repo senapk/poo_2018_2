@@ -16,5 +16,4 @@ int main () {
     int size = sizeof(L)/sizeof(int);
     cout << "Soma: " << proc(L, size, [](int x, int y){return x + y;}) << endl;
     cout << "Prod: " << proc(L, size, [](int x, int y){return x + y;}) << endl;
-    return 0;
 }
