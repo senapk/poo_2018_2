@@ -1,3 +1,6 @@
+# Introdução ao CPP
+
+---
 ## Escopo
 
 - Protótipo, argumentos, tipo de retorno
@@ -45,7 +48,7 @@
 !INCLUDECODE "00_fpointer2.cpp" (c++)
 
 ---
-## C - Funções
+## Referências Dummy
 
  - Uso de variáveis dummy static para retornar referências
 
