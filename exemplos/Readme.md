@@ -1,3 +1,6 @@
+# Introdução ao CPP
+
+---
 ## Escopo
 
 - Protótipo, argumentos, tipo de retorno
@@ -135,7 +138,7 @@ int main () {
 ```
 
 ---
-## C - Funções
+## Referências Dummy
 
  - Uso de variáveis dummy static para retornar referências
 
