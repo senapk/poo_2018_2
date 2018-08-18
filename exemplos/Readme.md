@@ -1,7 +1,16 @@
 # Introdução ao CPP
 
----
-## Compilando
+1\.  [Compilando](#compilando)  
+2\.  [Escopo](#escopo)  
+3\.  [Static](#static)  
+4\.  [Args](#args)  
+5\.  [Memória dinãmica](#memóriadinãmica)  
+6\.  [C - Funções](#c-funções)  
+7\.  [Referências Dummy](#referênciasdummy)  
+
+<a name="compilando"></a>
+
+## 1\. Compilando
 - O seu código deve ter a extensão .cpp.
 - Ele pode ser compilado com o g++. 
     - No Windows instale o Mingw.
@@ -22,8 +31,10 @@ CPPFLAGS = -std=c++14 -Wall
         make soma
 
 
----
-## Escopo
+***
+<a name="escopo"></a>
+
+## 2\. Escopo
 
 - Protótipo, argumentos, tipo de retorno
 - Escopo Global e Local
@@ -31,16 +42,20 @@ CPPFLAGS = -std=c++14 -Wall
 
 ```c++
 #include <iostream>
+#include <cstdio>
 
 int x = 11;
 int main () {
     int x = 9;
     std::cout << x << " " << ::x << std::endl;
+    printf("%d %d\n", x, ::x);
 }
 ```
 
----
-## Static
+***
+<a name="static"></a>
+
+## 3\. Static
 
 - Prefixadas pela palavra chave static
 - Uma função declarada como estática só é acessı́vel dentro do arquivo onde foi criada.
@@ -65,8 +80,10 @@ int main () {
 }
 ```
 
----
-## Args
+***
+<a name="args"></a>
+
+## 4\. Args
 
 - argc é a quantidade de argumentos
 - argv é a lista de argumentos
@@ -82,8 +99,10 @@ int main(int argc , char *argv []) {
 }
 ```
 
----
-## Memória dinãmica
+***
+<a name="memóriadinãmica"></a>
+
+## 5\. Memória dinãmica
 
 - Memória dinâmica é alocada e desalocada com new e delete
 
@@ -103,8 +122,10 @@ int main () {
 }
 ```
 
----
-## C - Funções
+***
+<a name="c-funções"></a>
+
+## 6\. C - Funções
 
 - Ponteiros para função do jeito C de ser
  
@@ -132,7 +153,7 @@ int main () {
 }
 ```
 
- ---
+ ***
  ## C++ - Funções
 
 - Jeito c++ de ser de passar funcoes c++11
@@ -159,8 +180,10 @@ int main () {
 }
 ```
 
----
-## Referências Dummy
+***
+<a name="referênciasdummy"></a>
+
+## 7\. Referências Dummy
 
  - Uso de variáveis dummy static para retornar referências
 
