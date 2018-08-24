@@ -1,0 +1,21 @@
+show
+in
+fuel 5
+show
+drive 40
+in
+drive 20
+drive 5
+fuel 10
+drive 30
+in
+out
+in
+out
+drive 40
+out
+out
+show
+end
+
+
