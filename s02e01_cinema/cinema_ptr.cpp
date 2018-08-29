@@ -32,7 +32,7 @@ struct Sala{
     {
     }
 
-    ~Sala(){
+   ~Sala(){
         for(Cliente * cli : cadeiras)
             delete(cli);
     }
@@ -61,18 +61,25 @@ struct Sala{
         stringstream ss;
         ss << "[ ";
         for(Cliente * cliente : cadeiras)
-            ss << cliente->toString() << " ";
+            if(cliente == nullptr)
+                ss << "- ";
+            else
+                ss << cliente->toString() << " ";
         ss << "]";
         return ss.str();
     }
 };
 
-int main(){
+int main(){ 
     Sala sala;
     string op;
     while(true){
         cin >> op;
-        if(op == "show"){
+        if(op == "end")
+            break;
+        if(op == "help"){
+            cout << "show; init _qtd; reservar _id _fone _ind; cancelar _id" << endl;
+        }else if(op == "show"){
             cout << sala.toString() << endl;
         }else if(op == "init"){
             int qtd;
