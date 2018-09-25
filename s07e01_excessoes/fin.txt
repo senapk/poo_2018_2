@@ -1,0 +1,23 @@
+addUser david 1717
+addUser david papagaio
+login david 50
+login david 1717
+logout
+logout
+addUser bia 51
+login bia 51
+showUsernames
+changePass 52 90
+changePass 51 90
+setSegredo 15 gosto de roer a unha do pe
+setSegredo 7 gosto de roer a unha do pe
+show
+logout
+login david 1717
+setSegredo 1 nao gosto do lula
+logout
+login admin admin
+showall
+logout
+show
+end
