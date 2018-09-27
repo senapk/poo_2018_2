@@ -1,0 +1,1 @@
+CPPFLAGS = -Wall -g -std=c++14
