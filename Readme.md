@@ -1,3 +1,19 @@
+## Trabalhos
+- 1. 01 Carro  
+- 2. 02 Topic
+- 2. 03 Contato
+- 3. 04 Banco (extra)
+- 2. 05 Tamagochi
+- 3. 06 Agiota
+- 1. 07 Refazer com repositorio (Agiota)
+- 1. 08 Repositorio I
+- 2. 09 Anotações
+- 3. 10 Salário
+- 4. 11 Trem
+- 4. 12 Matrícula
+- 4. 13 Twitter
+
+
 ## Download
 - Vscode
     - https://code.visualstudio.com/docs/?dv=win
