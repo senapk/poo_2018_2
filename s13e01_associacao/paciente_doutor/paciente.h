@@ -18,9 +18,10 @@ private:
 	// We'll define this function after we define what a Doctor is
 	// Since we need Doctor to be defined in order to actually use anything from it
 	void addDoctor(Doctor *doc);
+	void rmDoctor(std::string docId);
  
 public:
-	Patient(std::string name)
+	Patient(std::string name = "")
 		: m_name(name)
 	{
 	}
