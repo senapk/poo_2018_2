@@ -81,6 +81,13 @@ public:
         std::sort(usernames.begin(), usernames.end());
         return usernames;
     }
+    vector<string> getSecrets(){
+        vector<string> usernames;
+        for(auto& user : usuarios)
+            usernames.push_back(user.getId());
+        std::sort(usernames.begin(), usernames.end());
+        return usernames;
+    }
 };
 
 class GerLogin{
