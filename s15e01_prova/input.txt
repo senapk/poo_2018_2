@@ -1,0 +1,30 @@
+addContato eva oi:8585 claro:9999
+addContato ana tim:3434 casa:4567 oi:8754 
+addContato bia vivo:5454
+agenda
+rmFone ana 0
+agenda
+rmContato bia
+agenda
+search eva
+search 4567
+
+
+addContato bia vivo:5454
+addContato rui casa:3233
+addContato zac fixo:3131
+agenda
+fav eva
+fav ana
+fav ana
+fav zac
+fav rex
+agenda
+favorited
+rmContato zac
+favorited
+unfav ana
+favorited
+agenda
+
+
