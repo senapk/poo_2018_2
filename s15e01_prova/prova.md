@@ -76,4 +76,49 @@ $agenda
 
 # Parte 2 - Polimorfismo
 
+Altere sua agenda para suportar polimorfismo de Entrada. Qualquer coisas que tiver um id, um método toString e puder ser favoritada poderá ser guardada na agenda.
+
+```c++
+
+class Entry {
+    bool favorited;
+public:
+    Entry()
+    virtual ~Entry()
+    virtual string getId()
+    virtual void setFavorited(bool value)
+    virtual bool isFavorited()
+    virtual string toString()
+};
+
+class Agenda {
+    map<string, Entry*> m_entries;
+    map<string, Entry*> m_favorites;
+public:
+    void addEntry(Entry * entry)
+    void rmEntry(string id)
+    void favorite(string idEntry)
+    void unfavorite(string idEntry)
+    vector<Entry*> getFavorited()
+    Entry * getEntry(string id)
+    vector<Entry*> getEntries()
+    vector<Entry*> search(string pattern)
+    string toString()
+};
+```
+
+Além de contatos, sua agenda poderá guardar anotações.
+Como sua agenda não "sabe mais" o que é um contato ou uma anotação, 
+você deve montar uma classe que herda de Agenda e contém os métodos extras
+que você precisar
+
+```c++
+class AgendaMaster : public Agenda{
+public:
+    AgendaMaster()
+    Contato * getContato(string id);
+    Note * getNote(string id);
+```
+
+
 
