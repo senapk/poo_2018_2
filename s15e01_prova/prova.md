@@ -42,7 +42,11 @@ Complete o projeto da Agenda Híbrida.
 - A agenda deve ter uma lista de favoritos, além da lista de contatos. A lista de favoritos deve ser um 
 
 ```c++
-map<string, Contato*> favoritos;
+class Contato
+    - bool favorited
+
+class Agenda
+    - map<string, Contato*> favoritos;
 ```
 
 - Ao mostrar a agenda, os contatos favoritados devem iniciar com '@', enquanto os contatos normais iniciam com '-'.
@@ -68,6 +72,19 @@ $agenda
 @ eva C [0:oi:8585][1:claro:9999]
 - rui C [0:casa:3233]
 @ zac C [0:fixo:3131]
+
+$desfav zap
+@ ana C [0:casa:4567][1:oi:8754]
+- bia C [0:vivo:5454]
+@ eva C [0:oi:8585][1:claro:9999]
+- rui C [0:casa:3233]
+- zac C [0:fixo:3131]
+
+$favorited
+@ ana C [0:casa:4567][1:oi:8754]
+@ eva C [0:oi:8585][1:claro:9999]
+
+
 ```
 - Adapte as outras funções da agenda para que a adicão ou remoção de contatos e favoritar e desfavoritar mantenha o sistema íntegro.
 
@@ -119,6 +136,30 @@ public:
     Contato * getContato(string id);
     Note * getNote(string id);
 ```
+
+```c++
+class Note : public Entry { 
+    string id;
+    vector<string> itens;
+public:
+    Note(string id = "")
+        :id(id)
+    {}
+    string getId(){
+        return id;
+    }
+    void addItem(string item){
+        itens.push_back(item);
+    }
+    string toString(){
+        string saida = Entry::toString() + " N [ ";
+        for(auto item : itens){
+            saida += item + " ";
+        }
+        return saida + "]";
+    }
+};
+
 
 
 
