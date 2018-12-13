@@ -27,7 +27,16 @@ public:
 class Contato {
     string name;
     vector<Fone> fones;
+    bool favorited {false};
 public:
+    void setFavorited(bool value){
+        favorited = value;
+    }
+
+    bool isFavorited(){
+        return favorited;
+    }
+
     Contato(string name = ""){
         this->name = name;
     }
@@ -56,7 +65,8 @@ public:
     }
 
     string toString(){
-        string saida = this->name + " C ";
+        string saida = favorited ? "@" : "-";
+        saida += " " + this->name + " C ";
         int i = 0;
         for(auto fone : getFones())
             saida += "[" + to_string(i++) + ":" + fone.id + ":" + fone.number + "]";
@@ -66,6 +76,7 @@ public:
 
 class Agenda {
     map<string, Contato> contatos;
+    map<string, Contato*> favoritos;
 
 public:
     void addContato(Contato cont){
@@ -76,18 +87,42 @@ public:
     }
 
     void rmContato(string name) {
-        contatos.erase(name);
+        if(contatos.erase(name))
+            favoritos.erase(name);
+    }
+
+    void favorite(string idContato){
+        auto it = contatos.find(idContato);
+        if(it != contatos.end()){
+            Contato& contato = it->second;
+            if(!contato.isFavorited()){
+                contato.setFavorited(true);
+                favoritos[idContato] = &contato;
+            }
+        }else{
+            throw "fail: contato " + idContato + " nao existe";
+        }
+    }
+
+    void unfavorite(string idContato){
+        auto it = favoritos.find(idContato);
+        if(it != favoritos.end()){
+            it->second->setFavorited(false);
+            favoritos.erase(it);
+        }
+    }
+
+    vector<Contato> getFavorited(){
+        vector<Contato> favorited;
+        for(auto& par : favoritos)
+            favorited.push_back(*par.second);
+        return favorited;
     }
 
     Contato * getContato(string name){
-        auto it = contatos.find(name);
-        if(it == contatos.end())
-            throw string("  contato " + name + " nao existe");
-        Contato *cont = &it->second;
-        
         if(contatos.count(name))
             return &contatos[name];
-       
+        throw string("  contato " + name + " nao existe");
     }
 
     vector<Contato> getContatos(){
@@ -126,15 +161,20 @@ public:
         if(op == "addContato"){
             string name, id_number;
             ss >> name;
-            Contato cont(name);
+            Contato * pcont;
+            try{
+                pcont = agenda.getContato(name);
+            }catch(exception e){
+                agenda.addContato(Contato(name));
+                pcont = agenda.getContato(name);;
+            }
             while(ss >> id_number){
                 string id, fone;
                 stringstream ssfone(id_number);
                 getline(ssfone, id, ':');
                 ssfone >> fone;
-                cont.addFone(Fone(id, fone));
+                pcont->addFone(Fone(id, fone));
             }
-            agenda.addContato(cont);
         }
         else if(op == "rmFone"){
             string name;
@@ -157,27 +197,21 @@ public:
             for(auto contato : resp)
                 cout << contato.toString() << endl;
         }
-        /*
-        if(op == "fav"){
+        else if(op == "fav"){
             string name;
             ss >> name;
-            agenda.favoritar(name);
-            return "done";
+            agenda.favorite(name);
         }
-        if(op == "desfav"){
+        else if(op == "unfav"){
             string name;
             ss >> name;
-            agenda.desfavoritar(name);
-            return "done";
+            agenda.unfavorite(name);
         }
-        if(op == "showFav"){
-            string saida = "";
-            auto favs = agenda.getFavoritos();
+        else if(op == "favorited"){
+            auto favs = agenda.getFavorited();
             for(auto contato : favs)
-                saida += contato.toString() + "\n";
-            return saida;
+                cout << contato.toString() << endl;
         }
-        */
         else
             cout << "comando invalido" << endl;
     }
